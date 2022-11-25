@@ -8,8 +8,6 @@ Armazenar em um mesmo repositório os projetos pessoais.
 
 ## 🖼️ Previews
 
-### Point Screen
-
-| Home                                                       |
+| Point Screen                                               |
 | ---------------------------------------------------------- |
 | <img src="./PointScreen/src/assets/PointScreenHome.PNG" /> |

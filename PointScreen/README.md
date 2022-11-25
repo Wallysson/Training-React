@@ -6,51 +6,31 @@
 
 </p>
 
-# 💻 Formulário MUI
+# 💻 Point Screen
 
 Utilizar React e Material UI para criar um formulário ficticio para cadastro de cliente com os campos: Nome, CPF, E-mail, Cep, Endereço, Número do endereço, Bairro, Cidade. Abaixo dos campos um botão "SALVAR" que mostra as informações no console do navegador.
-
-- <a href="https://form-mui.vercel.app/" target="_blank">Deploy</a>
 
 ## 🚀 Tecnologias
 
 - [ReactJS](https://reactjs.org/)
 - [TypeScript](https://www.typescriptlang.org/)
-- [MateriaUI](https://mui.com/core/)
-- [ReactHookForm](https://react-hook-form.com/)
-- [Yup](https://github.com/jquense/yup)
-- [Toastify](https://fkhadra.github.io/react-toastify/introduction)
+- [TailwindCSS](https://tailwindcss.com/)
 
 ## 📑 Features
 
-- Cadastro de cliente;
+- Printar no quadro branco uma bolinha de acordo com o que o usuário for clicando.
 
 ## 💡 Desafios
 
-- Utilizar Typescript; ✔️
-- Validar as informações dos inputs ao clicar no botão salvar; ✔️
-- Notificação quando um cliente submeter o formulário; ✔️
-- Utilizar [ViaCEP](https://viacep.com.br/) pra trazer as informações do cliente de acordo com o CEP ; ⏳
-- Mascáras nos inputs CPF e CEP; ⏳
+- Criar layout utilizando TailwindCSS; ✔️
+- Criar um quadro onde que quando o usuário clicar irá criar uma bolinha sinalizando qual lugar ele clicou; ✔️
+- Criar botão para desfazer o último registro; ✔️
+- Criar botão para começar do zero; ✔️
+- Refatorar o código passando useContext e componentizando o projeto; ✔️
+- A cor da bolinha ser aleatória; ⏳
 
 ## 🖼️ Previews
 
-### Web
-
-| Home                                       | Error Salvar Form                               |
-| ------------------------------------------ | ----------------------------------------------- |
-| <img src="./src/assets/FormHomeWeb.PNG" /> | <img src="./src/assets/FormHomeWebError.PNG" /> |
-
-| Form Enviado                                   | Console Form                                   |
-| ---------------------------------------------- | ---------------------------------------------- |
-| <img src="./src/assets/FormHomeWebSave.PNG" /> | <img src="./src/assets/FormHomeConsole.PNG" /> |
-
-### Mobile
-
-| Home                                           | Error Salvar Form                                   |
-| ---------------------------------------------- | --------------------------------------------------- |
-| <img src="./src/assets/FormHomeMobile.jpeg" /> | <img src="./src/assets/FormHomeMobileError.jpeg" /> |
-
-| Form Enviado                                       |
-| -------------------------------------------------- |
-| <img src="./src/assets/FormHomeMobileSave.jpeg" /> |
+| Point Screen                                   |
+| ---------------------------------------------- |
+| <img src="./src/assets/PointScreenHome.PNG" /> |
