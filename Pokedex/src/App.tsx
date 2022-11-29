@@ -1,5 +1,10 @@
-import { Pokedex } from './pages/pokedex'
+import { BrowserRouter } from 'react-router-dom'
+import { Router } from './router'
 
 export function App() {
-  return <Pokedex />
+  return (
+    <BrowserRouter>
+      <Router />
+    </BrowserRouter>
+  )
 }
