@@ -1,17 +1,11 @@
-import styled from 'styled-components'
-import { ListPokemonProps } from '..'
+import { Card, CardMedia, Chip } from '@mui/material'
 import { useNavigate } from 'react-router-dom'
+import { PokemonDetails } from '../../../@types/pokemonDetails'
+import { CardWrapper, SCardHeader } from './styles'
 
 interface PokedexCardProps {
-  pokemon: ListPokemonProps
+  pokemon: PokemonDetails
 }
-
-const Card = styled.section`
-  padding: 4rem;
-  border-radius: 0.5rem;
-  background: papayawhip;
-  cursor: pointer;
-`
 
 export function PokedexCard({ pokemon }: PokedexCardProps) {
   const navigate = useNavigate()
@@ -19,5 +13,25 @@ export function PokedexCard({ pokemon }: PokedexCardProps) {
   function handleClick() {
     navigate(`/pokemon/${pokemon.name}`)
   }
-  return <Card onClick={handleClick}>{pokemon.name}</Card>
+  return (
+    <Card onClick={handleClick} sx={{ padding: 4 }}>
+      <CardWrapper>
+        <CardMedia
+          component="img"
+          width="100%"
+          height="100%"
+          image={pokemon.sprites.front_default}
+          alt={pokemon.name}
+        />
+        <SCardHeader>
+          <h3>{pokemon.name.toUpperCase()}</h3>
+          <div>
+            {pokemon.types.map(type => (
+              <Chip label={type.type.name} variant="outlined" />
+            ))}
+          </div>
+        </SCardHeader>
+      </CardWrapper>
+    </Card>
+  )
 }

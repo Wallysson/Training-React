@@ -1,16 +1,9 @@
-import {
-  AppBar,
-  Box,
-  Toolbar,
-  IconButton,
-  Typography,
-  Container
-} from '@mui/material'
-import MenuIcon from '@mui/icons-material/Menu'
+import { Box, Typography, Container } from '@mui/material'
 import { PokemonDetails } from '../../@types/pokemonDetails'
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
+import { AppBarComponent } from '../../components/AppBar'
 
 export function DetailsPokemon() {
   const [detailsPokemon, setDetailsPokemon] = useState<
@@ -33,25 +26,7 @@ export function DetailsPokemon() {
 
   return (
     <>
-      <Box sx={{ flexGrow: 1 }}>
-        <AppBar position="static">
-          <Toolbar>
-            <IconButton
-              size="large"
-              edge="start"
-              color="inherit"
-              aria-label="menu"
-              sx={{ mr: 2 }}
-            >
-              <MenuIcon />
-            </IconButton>
-            <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-              Pokémon selecionado: {name?.toUpperCase()}
-            </Typography>
-          </Toolbar>
-        </AppBar>
-      </Box>
-
+      <AppBarComponent />
       <Container maxWidth="md">
         <Box mt={2}>
           <img
