@@ -8,14 +8,6 @@ import { AppBarComponent } from '../../components/AppBar'
 
 export function Pokedex() {
   const [listPokemons, setListPokemons] = useState<PokemonDetails[]>([])
-  const [nextUrl, setNextUrl] = useState<string | undefined>(undefined)
-  const [previousUrl, setPreviousUrl] = useState('')
-
-  async function next() {
-    let data = pokedex().then(response => {
-      console.log(response.next)
-    })
-  }
 
   useEffect(() => {
     pokedex().then(response => setListPokemons(response.results))

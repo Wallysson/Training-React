@@ -15,7 +15,14 @@ export function PokedexCard({ pokemon }: PokedexCardProps) {
     navigate(`/pokemon/${pokemon.name}`)
   }
   return (
-    <Card onClick={handleClick} sx={{ padding: 4, cursor: 'pointer' }}>
+    <Card
+      onClick={handleClick}
+      sx={{
+        padding: 3,
+        cursor: 'pointer',
+        backgroundColor: '#f0f0f0'
+      }}
+    >
       <CardWrapper>
         <CardMedia
           component="img"

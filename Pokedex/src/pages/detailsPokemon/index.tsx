@@ -1,9 +1,10 @@
-import { Box, Typography, Container } from '@mui/material'
+import { Box, Typography, Container, Card, CardMedia } from '@mui/material'
 import { PokemonDetails } from '../../@types/pokemonDetails'
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
 import { AppBarComponent } from '../../components/AppBar'
+import { CardWrapper } from '../pokedex/components/styles'
 
 export function DetailsPokemon() {
   const [detailsPokemon, setDetailsPokemon] = useState<
@@ -28,37 +29,43 @@ export function DetailsPokemon() {
     <>
       <AppBarComponent />
       <Container maxWidth="md">
-        <Box mt={2}>
-          <img
-            src={detailsPokemon?.sprites.front_default}
-            alt={name}
-            width="100%"
-            height="auto"
-          />
-        </Box>
-        <Box display="flex">
-          <Typography>Nome: </Typography>
-          <Typography>{detailsPokemon?.name}</Typography>
-        </Box>
-        <Box display="flex">
-          <Typography>Tipo: </Typography>
-          {detailsPokemon?.types.map(type => (
-            <Typography>{type.type.name}</Typography>
-          ))}
-        </Box>
-        <Box display="flex">
-          <Typography>Peso: </Typography>
-          <Typography>{detailsPokemon?.weight}</Typography>
-        </Box>
-        <Box display="flex">
-          <Typography>Altura: </Typography>
-          <Typography>{detailsPokemon?.height}</Typography>
-        </Box>
-        <Box display="flex">
-          <Typography>Habilidades: </Typography>
-          {detailsPokemon?.abilities.map(ability => (
-            <Typography>{ability.ability.name}</Typography>
-          ))}
+        <Box mt={4}>
+          <Card
+            sx={{
+              cursor: 'pointer',
+              backgroundColor: '#f0f0f0',
+              padding: 4
+            }}
+          >
+            <CardWrapper>
+              <CardMedia
+                component="img"
+                width="50%"
+                height="50%"
+                image={detailsPokemon?.sprites.front_default}
+                alt={detailsPokemon?.name}
+              />
+
+              <Box display="flex">
+                <Typography>Nome: </Typography>
+                <Typography>{detailsPokemon?.name}</Typography>
+              </Box>
+              <Box display="flex">
+                <Typography>Tipo: </Typography>
+                {detailsPokemon?.types.map(type => (
+                  <Typography>{type.type.name}</Typography>
+                ))}
+              </Box>
+              <Box display="flex">
+                <Typography>Peso: </Typography>
+                <Typography>{detailsPokemon?.weight}</Typography>
+              </Box>
+              <Box display="flex">
+                <Typography>Altura: </Typography>
+                <Typography>{detailsPokemon?.height}</Typography>
+              </Box>
+            </CardWrapper>
+          </Card>
         </Box>
       </Container>
     </>
