@@ -1,6 +1,7 @@
 import { Card, CardMedia, Chip } from '@mui/material'
 import { useNavigate } from 'react-router-dom'
 import { PokemonDetails } from '../../../@types/pokemonDetails'
+import { pokemonTypeColors } from '../../../helpers/pokemonTypeColors'
 import { CardWrapper, SCardHeader } from './styles'
 
 interface PokedexCardProps {
@@ -14,7 +15,7 @@ export function PokedexCard({ pokemon }: PokedexCardProps) {
     navigate(`/pokemon/${pokemon.name}`)
   }
   return (
-    <Card onClick={handleClick} sx={{ padding: 4 }}>
+    <Card onClick={handleClick} sx={{ padding: 4, cursor: 'pointer' }}>
       <CardWrapper>
         <CardMedia
           component="img"
@@ -26,8 +27,16 @@ export function PokedexCard({ pokemon }: PokedexCardProps) {
         <SCardHeader>
           <h3>{pokemon.name.toUpperCase()}</h3>
           <div>
-            {pokemon.types.map(type => (
-              <Chip label={type.type.name} variant="outlined" />
+            {pokemon.types.map((type, index) => (
+              <Chip
+                label={type.type.name}
+                variant="outlined"
+                key={index}
+                style={{
+                  backgroundColor: pokemonTypeColors[type.type.name],
+                  color: 'white'
+                }}
+              />
             ))}
           </div>
         </SCardHeader>

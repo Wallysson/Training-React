@@ -14,6 +14,7 @@ export interface ListPokemonsInterface {
   results: PokemonDetails[];
 }
 
+
 export async function pokedex(): Promise<ListPokemonsInterface> {
   const url = `https://pokeapi.co/api/v2/pokemon`;
 
@@ -28,5 +29,6 @@ export async function pokedex(): Promise<ListPokemonsInterface> {
   return {
     ...response.data,
     results: resultsPromise
+
   };
 }
