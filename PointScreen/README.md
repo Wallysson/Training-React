@@ -8,7 +8,7 @@
 
 # 💻 Point Screen
 
-Utilizar React e Material UI para criar um formulário ficticio para cadastro de cliente com os campos: Nome, CPF, E-mail, Cep, Endereço, Número do endereço, Bairro, Cidade. Abaixo dos campos um botão "SALVAR" que mostra as informações no console do navegador.
+Projeto simples baseado em marcar a coordenadas do click do mouse e clicar uma bolinha na tela, depois ser possível desfazer último clique ou reiniciar o quadro branco.
 
 ## 🚀 Tecnologias
 
